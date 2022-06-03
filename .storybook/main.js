@@ -12,4 +12,8 @@ module.exports = {
   features: {
     interactionsDebugger: true,
   },
+  babel: async (options) => {
+    options.plugins.push('babel-plugin-inline-react-svg');
+    return options;
+  },
 };
