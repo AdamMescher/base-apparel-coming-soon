@@ -1,6 +1,8 @@
-import styled from "styled-components";
-import BaseApparelLogo from "../../assets/logo.svg";
-import HeroMobile from "../../assets/hero-mobile.jpg";
+import styled from 'styled-components';
+import BaseApparelLogo from '../../assets/logo.svg';
+import HeroMobile from '../../assets/hero-mobile.jpg';
+import IconButton from '../IconButton';
+import { ReactComponent as Arrow } from '../../assets/icon-arrow.svg';
 
 const Wrapper = styled.main`
   --padding: 30px;
@@ -45,12 +47,13 @@ const Copy = styled.p`
 
 function App() {
   return (
-    <Wrapper data-testid="app">
+    <Wrapper data-testid='app'>
       <Logo>
-        <img src={BaseApparelLogo} alt="" />
+        <img src={BaseApparelLogo} alt='base apparel logo' />
       </Logo>
+      <IconButton label={'submit'} icon={Arrow} />
       <Hero>
-        <img src={HeroMobile} alt="" />
+        <img src={HeroMobile} alt='' />
       </Hero>
       <Title>
         <span>we're</span>

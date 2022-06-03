@@ -1,0 +1,12 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import App from './App';
+
+<Meta title="App" component={App} />
+
+export const Template = (args) => <App {...args} />;
+
+# App
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>

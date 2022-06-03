@@ -1,0 +1,12 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import Subscribe from './Subscribe';
+
+<Meta title='Subscribe' component={Subscribe} />
+
+export const Template = (args) => <Subscribe {...args} />;
+
+# Text Input
+
+<Canvas>
+  <Story name='Default'>{Template.bind({})}</Story>
+</Canvas>

@@ -1,0 +1,32 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import IconButton from './IconButton';
+import { ReactComponent as Arrow } from '../../assets/icon-arrow.svg';
+
+<Meta
+  title='IconButton'
+  component={IconButton}
+  argTypes={{
+    onClick: { action: 'clicked' },
+    label: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'submit',
+    },
+  }}
+/>
+
+export const Template = (args) => <IconButton {...args} />;
+
+# Button
+
+<Canvas>
+  <Story
+    name='Default'
+    args={{
+      label: 'submit',
+      icon: Arrow
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
