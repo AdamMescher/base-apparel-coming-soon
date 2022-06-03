@@ -8,7 +8,7 @@ expect.extend(toHaveNoViolations);
 describe('App Component', () => {
   it('Should render without errors', () => {
     render(<App />);
-    expect(screen.getByAltText('base apparel logo')).toBeInTheDocument();
+    expect(screen.getByTitle('base apparel logo')).toBeInTheDocument();
     expect(screen.getByText(/soon/i)).toBeInTheDocument();
     expect(screen.getByText(/hello fellow shoppers/i)).toBeInTheDocument();
   });

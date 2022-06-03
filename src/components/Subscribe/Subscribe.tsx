@@ -26,7 +26,7 @@ const Wrapper = styled.form<{ error: boolean }>`
     right: -28px;
     top: 0px;
     ${(props) =>
-      props?.error ? 'padding-top: 17px; padding-bottom: 17px;' : null}
+      props?.error ? 'padding-top: 20px; padding-bottom: 20px;' : null}
   }
 `;
 const Input = styled.input<{ error: boolean }>`
@@ -73,7 +73,7 @@ const Subscribe = () => {
         {...register('email', {
           required: {
             value: true,
-            message: 'Email field is required to subscribe',
+            message: 'Email is required',
           },
           pattern: {
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,

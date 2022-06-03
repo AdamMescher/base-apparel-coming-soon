@@ -5,5 +5,13 @@ const config: Config.InitialOptions = {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.svg$': 'jest-transformer-svg',
   },
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  globals: {
+    'ts-jest': {
+      isolatedModules: true,
+    },
+  },
 };
+
 export default config;

@@ -22,7 +22,7 @@ describe('Subscribe Component', () => {
     const user = userEvent.setup();
     render(<Subscribe />);
     await user.click(screen.getByRole('button'));
-    expect(screen.getByText(/email field is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/email is required/i)).toBeInTheDocument();
   });
   it('Should return an inline error message when the email input is invalid', async () => {
     const user = userEvent.setup();

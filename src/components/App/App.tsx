@@ -1,7 +1,14 @@
 import styled from 'styled-components';
+import Subscribe from '../Subscribe';
+import useWindowSize from '../../hooks/useWindowSize';
 import { ReactComponent as BaseApparelLogo } from '../../assets/logo.svg';
 import HeroMobile from '../../assets/hero-mobile.jpg';
-import Subscribe from '../Subscribe';
+import HeroDesktop from '../../assets/hero-desktop.jpg';
+
+interface Size {
+  width: number | undefined;
+  height: number | undefined;
+}
 
 const Wrapper = styled.main`
   --padding: 30px;
@@ -10,9 +17,12 @@ const Wrapper = styled.main`
   background: var(--gradient-white-softwhite);
   padding-left: var(--padding);
   padding-right: var(--padding);
+  display: grid;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr;
 `;
 const Logo = styled.div`
-  padding: 32px;
+  display: flex;
+  align-items: center;
 `;
 const Hero = styled.div`
   margin-left: -30px;
@@ -42,17 +52,21 @@ const Copy = styled.p`
   color: var(--desaturated-red);
   line-height: 1.4;
   letter-spacing: 0.02rem;
-  margin-bottom: 32px;
 `;
 
 function App() {
+  const size: Size = useWindowSize();
+  const isMobile = size && size?.width && size?.width < 768;
   return (
     <Wrapper data-testid='app'>
       <Logo>
-        <BaseApparelLogo />
+        <BaseApparelLogo title='base apparel logo' />
       </Logo>
       <Hero>
-        <img src={HeroMobile} alt='' />
+        <img
+          src={isMobile ? HeroMobile : HeroDesktop}
+          alt='stylish woman with brown hair, orange shirt, and bracelet'
+        />
       </Hero>
       <Title>
         <span>we're</span>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
-  icon: any;
+  icon: React.ElementType;
   label: string;
   type?: 'submit' | 'reset' | 'button';
 }
@@ -13,7 +13,7 @@ const Base = styled.button`
   align-items: center;
   border: none;
   background: var(--gradient-softred-pink);
-  padding: 16px 32px;
+  padding: 19px 32px;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 200ms ease-in-out;
@@ -31,10 +31,10 @@ const Base = styled.button`
 `;
 
 const IconButton = ({ icon, label, ...args }: Props) => {
-  const Icon = icon;
+  const Icon: React.ElementType = icon;
   return (
     <Base aria-label={label} {...args}>
-      <Icon />
+      <Icon title={'right arrow'} />
     </Base>
   );
 };
