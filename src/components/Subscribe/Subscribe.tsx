@@ -13,6 +13,7 @@ const Wrapper = styled.form<{ error: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-right: 28px;
   & > svg {
     height: 24px;
     width: 24px;

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import BaseApparelLogo from '../../assets/logo.svg';
+import { ReactComponent as BaseApparelLogo } from '../../assets/logo.svg';
 import HeroMobile from '../../assets/hero-mobile.jpg';
-import IconButton from '../IconButton';
-import { ReactComponent as Arrow } from '../../assets/icon-arrow.svg';
+import Subscribe from '../Subscribe';
 
 const Wrapper = styled.main`
   --padding: 30px;
@@ -12,7 +11,7 @@ const Wrapper = styled.main`
   padding-left: var(--padding);
   padding-right: var(--padding);
 `;
-const Logo = styled.header`
+const Logo = styled.div`
   padding: 32px;
 `;
 const Hero = styled.div`
@@ -43,15 +42,15 @@ const Copy = styled.p`
   color: var(--desaturated-red);
   line-height: 1.4;
   letter-spacing: 0.02rem;
+  margin-bottom: 32px;
 `;
 
 function App() {
   return (
     <Wrapper data-testid='app'>
       <Logo>
-        <img src={BaseApparelLogo} alt='base apparel logo' />
+        <BaseApparelLogo />
       </Logo>
-      <IconButton label={'submit'} icon={Arrow} />
       <Hero>
         <img src={HeroMobile} alt='' />
       </Hero>
@@ -67,6 +66,7 @@ function App() {
         Add your email below to stay up-to-date with announcements and our
         launch deals.
       </Copy>
+      <Subscribe />
     </Wrapper>
   );
 }
