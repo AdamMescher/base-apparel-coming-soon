@@ -4,6 +4,7 @@ import useWindowSize from '../../hooks/useWindowSize';
 import { ReactComponent as BaseApparelLogo } from '../../assets/logo.svg';
 import HeroMobile from '../../assets/hero-mobile.jpg';
 import HeroDesktop from '../../assets/hero-desktop.jpg';
+import BackgroundPatternDesktop from '../../assets/bg-pattern-desktop.svg';
 
 interface Size {
   width: number | undefined;
@@ -19,10 +20,32 @@ const Wrapper = styled.main`
   padding-right: var(--padding);
   display: grid;
   grid-template-rows: 80px 1fr 1fr 1fr 1fr;
+  @media (min-width: 768px) {
+    background-image: ${`url('${BackgroundPatternDesktop}')`};
+    background-size: cover;
+    grid-template-areas:
+      'logo hero'
+      'title hero'
+      'copy hero'
+      'subscribe hero';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 1fr 1fr 1fr;
+    padding: 0;
+    & > form {
+      width: 58%;
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+  }
 `;
 const Logo = styled.div`
   display: flex;
   align-items: center;
+  @media (min-width: 768px) {
+    grid-area: logo;
+    width: 60%;
+    margin-left: 20%;
+  }
 `;
 const Hero = styled.div`
   margin-left: -30px;
@@ -32,6 +55,15 @@ const Hero = styled.div`
     min-height: 200px;
     max-height: 300px;
     object-fit: cover;
+  }
+  @media (min-width: 768px) {
+    grid-area: hero;
+    margin: 0;
+    & > img {
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+    }
   }
 `;
 const Title = styled.h1`
@@ -46,12 +78,31 @@ const Title = styled.h1`
     color: var(--desaturated-red);
     font-weight: var(--fw-light);
   }
+  @media (min-width: 768px) {
+    grid-area: title;
+    width: 60%;
+    margin-left: 20%;
+    text-align: left;
+    font-size: 46px;
+    letter-spacing: 4px;
+    white-space: nowrap;
+  }
+  @media (min-width: 900px) {
+    font-size: 68px;
+  }
 `;
 const Copy = styled.p`
   margin-top: 32px;
   color: var(--desaturated-red);
   line-height: 1.4;
   letter-spacing: 0.02rem;
+  @media (min-width: 768px) {
+    grid-area: copy;
+    width: 50%;
+    margin-left: 20%;
+    font-size: 18px;
+    line-height: 1.8;
+  }
 `;
 
 function App() {

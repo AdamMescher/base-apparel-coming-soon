@@ -28,6 +28,9 @@ const Wrapper = styled.form<{ error: boolean }>`
     ${(props) =>
       props?.error ? 'padding-top: 20px; padding-bottom: 20px;' : null}
   }
+  @media (min-width: 768px) {
+    margin-right: 100px;
+  }
 `;
 const Input = styled.input<{ error: boolean }>`
   transition: all 200ms ease-in-out;
