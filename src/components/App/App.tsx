@@ -28,7 +28,7 @@ const Wrapper = styled.main`
       'title hero'
       'copy hero'
       'subscribe hero';
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     grid-template-rows: 150px 1fr 1fr 1fr;
     padding: 0;
     & > form {
